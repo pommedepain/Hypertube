@@ -1,0 +1,43 @@
+{
+  "password": {
+		"config": {
+			"elementType": "input",
+			"elementConfig": {
+				"type": "password",
+				"placeholder": "Choose a new password"
+			},
+			"value": "",
+			"validation": {
+				"required": true, 
+				"minLength": 7,
+				"maxLength": 150,
+				"regex": "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#%5C$%%5C^&%5C*])(?=.{7,150})",
+				"rule": "Must have at least: 1 uppercase, 1 lowercase, 1 number and 1 special character"
+			},
+			"valid": false,
+			"touched": false,
+			"errorMessage": ""
+		},
+		"id": "password"
+	},
+	"cPasswd": {
+		"config": {
+			"elementType": "input",
+			"elementConfig": {
+				"type": "password",
+				"placeholder": "Confirm password"
+			},
+			"value": "",
+			"validation": {
+				"required": true, 
+				"minLength": 7,
+				"maxLength": 150,
+				"regex": "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#%5C$%%5C^&%5C*])(?=.{7,150})"
+			},
+			"valid": false,
+			"touched": false,
+			"errorMessage": "Your entry doesn't match its sibling"
+		},
+		"id": "cPasswd"
+  }
+}

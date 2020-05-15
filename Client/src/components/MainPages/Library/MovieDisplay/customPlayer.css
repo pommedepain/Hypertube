@@ -1,0 +1,346 @@
+.player-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#player {
+  border: none;
+}
+
+/* Loader */
+.lds-ring {
+  display: inline-block;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: transparent;
+  margin: 0 auto;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: -40px;
+  z-index: 3;
+}
+
+.allControls {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: relative;
+  align-items: center;
+}
+.left-controls {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+
+#playpause {
+  margin-right: 20px;
+  margin-left: 2px;
+  font-size: 2em;
+  color: white;
+  cursor: pointer;
+}
+
+#mute-unmute {
+  color: white;
+  font-size: 2em;
+  cursor: pointer;
+}
+#mute-unmute:hover + #volume,#volume:hover {
+  display: inline;
+}
+
+#volume {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  -webkit-appearance: none;
+  -webkit-transform:rotate(-90deg);
+  background: grey;
+  color: grey;
+  cursor: pointer;
+  bottom: 80px;
+  left: -6px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .7);
+  border-radius: 5px;
+}
+#volume:focus {
+  outline: none;
+}
+#volume:focus::-webkit-slider-runnable-track {
+  background: grey;
+}
+/* Volume track */
+#volume::-webkit-slider-runnable-track/*, #volume::-moz-range-track, #volume::-ms-track*/ {
+  -webkit-appearance: none;
+  color: grey;
+  background-color: grey;
+  width: 200px;
+  height: 20px;
+  border-radius: 3px;
+}
+/* Volume cursor */
+#volume::-webkit-slider-thumb/*, #volume::-moz-range-thumb, #volume::-ms-thumb*/ {
+  -webkit-appearance: none;
+  border: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 2px;
+  background: var(--White);
+  box-shadow: -200px 0 0 200px var(--White);
+  /* box-shadow: 0px 0px 30px rgba(255, 255, 255, .5); */
+  /* margin-top: -2px; */
+}
+#volume::-moz-range-progress {
+  /* height: 0; */
+  background:var(--White);
+  box-shadow: 0px 0px 30px rgba(255, 255, 255, .5);
+}
+#volume.custom-slider::-ms-tooltip {
+  display: none;
+}
+#volume::-ms-fill-lower {
+  background: var(--White);
+  box-shadow: 0px 0px 30px rgba(255, 255, 255, .5);
+}
+#volume::-ms-fill-upper {
+  background: transparent;
+}
+
+#timeplayed {
+  margin: 0 auto;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+
+.right-controls {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Subtitles button & selection */
+#subs {
+  color: var(--White);
+  font-size: 2em;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.subtitles-background {
+  position: absolute;
+  display: none;
+  bottom: 125%;
+  right: 0.2%;
+  padding: 10px 0 10px 10px;
+  background-color: rgb(53, 53, 53);
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .7);
+  z-index: 4;
+}
+.sub-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--White);
+  text-align: center;
+  cursor: default;
+  padding-right: 10px;
+}
+#subtitles-list {
+  list-style: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-inline-start: 0;
+  padding: 0 10px;
+  max-width: 120px;
+  max-height: 150px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+#subtitles-list::-webkit-scrollbar {
+  width: 8px !important;
+  height: 8px !important;
+}
+#subtitles-list::-webkit-scrollbar-thumb {
+background: var(--LightGrey) !important; 
+border-radius: 20px !important;
+}
+#subtitles-list > li {
+  font-size: 1em;
+  text-align: left;
+  position: relative;
+  width: 130%;
+  height: 100%;
+  left: -5px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+#subtitles-list > li:hover {
+  background-color: rgb(85, 85, 85);
+  color: var(--White);
+}
+#subtitles-list > li:hover + #checkIcon, #checkIcon:hover {
+  background-color: rgb(85, 85, 85);
+  color: var(--White);
+}
+#subtitles-list > .not-selected {
+  color: rgba(245, 245, 245, 0.452);
+}
+#subtitles-list > .selected {
+  color: var(--White);
+  font-style: italic;
+  position: relative;
+}
+li > i {
+  font-size: 0.8em;
+  color: var(--White);
+  position: relative;
+  top: 3px;
+  right: 5px;
+}
+.noSub {
+  font-size: 1em;
+  color: rgba(245, 245, 245, 0.452);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+}
+
+/* Subtitles display */
+video::cue {
+  font-size: 0.8em;
+  color: rgb(255, 238, 0);
+}
+/* video::-webkit-media-text-track-container {
+  position: absolute;
+  border: 1px solid red;
+  bottom: 200px;
+}
+video::-webkit-media-text-track-background {
+  background: red;
+  border: 1px solid red;
+}
+video::-webkit-media-text-track-display {
+  font-size: 0.8em;
+  color: rgb(255, 238, 0);
+} */
+/* video::-webkit-media-text-track-display-backdrop {
+  font-size: 0.8em;
+  color: rgb(255, 238, 0);
+  overflow: visible !important;
+}
+video::-webkit-media-text-track-display {
+  overflow: visible !important;
+  font-size: 0.8em;
+  color: rgb(255, 238, 0);
+}
+.captions {
+  color: rgb(241, 20, 20);
+  position: absolute;
+  bottom: 200px;
+} */
+
+#fullscreen {
+  color: var(--White);
+  font-size: 2em;
+  margin-right: 2px;
+  cursor: pointer;
+}
+
+/* Custom progress bar */
+.progressBar {
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  margin-top: -45px;
+  cursor: pointer;
+}
+.buffered {
+  height: 10px;
+  position: absolute;
+  background: #555;
+  width: 500px;
+}
+
+#buffered-amount {
+  display: block;
+  height: 100%;
+  background-color: #777;
+  width: 0;
+}
+
+.progress {
+  /* margin-top: -15px; */
+  height: 10px;  
+  position: relative;
+  width: 500px;
+  background-color: transparent;
+}
+
+#progress-amount {
+  display: block;
+  height: 100%;
+  background-color: var(--White);
+  width: 0;
+}
+
+.errorDisplay {
+  position: absolute;
+  text-align: center;
+  width: 500px;
+  font-size: 1em;
+  color: var(--White);
+}
+
+.streamingButton {
+  height: 25px;
+}

@@ -1,0 +1,218 @@
+html {
+  zoom: .8;
+  -webkit-touch-callout: none; 
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  font-family:  "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0f0f0f !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  border-bottom: solid 1px white;
+  background-color: rgba(255, 255, 255, .3);
+  -webkit-box-shadow: 0 0 0 30px rgba(255, 255, 255, .3) inset !important;
+  color: white;
+}
+
+@-webkit-keyframes autofill {
+  to {
+      color: #666;
+      background: transparent;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-transition-delay: 99999s;
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
+
+input {
+  background-color: transparent !important;
+}
+/* --- Basic Property --- */
+
+    /* -- Main Colors -- */
+
+    :root {
+      --Black: #0f0f0f;
+      --White: #f0f0f0;
+      --LightGrey: #8E8E8E;
+      --DarkGrey: #2F2F2F;
+      --DangerousRed: #BE0101;
+      --ValidGreen: #01B50F;
+  }
+
+  /* -- Style Basics -- */
+
+  body {
+      font-family: 'Roboto', 'Sergoe', sans-serif;
+      background-color: var(--Black);
+      color: var(--White);
+  }
+
+  /* --- Custom ScrollBar --- */
+
+  ::-webkit-scrollbar {
+      width: 6px !important;
+      height: 6px !important;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--LightGrey) !important; 
+    border-radius: 20px !important;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--DarkGrey) !important;
+    border-radius: 20px !important;
+  }
+
+  /* -- Typo -- */
+
+  h1 { /* Sections Title */
+    font-size: 8.9em; 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  h2 { /* Sections Subtitle */
+    color: white;
+  }
+
+  h3 { /* Do not know yet */
+    color: white;
+  }
+
+  h4 { /* Username */
+    color: white;
+  }
+
+  p { /* Text */
+    color: white;
+  }
+
+/* --- MAIN PAGE -- */
+
+  .title_active {
+    position: absolute;
+    font-size: 8.9em !important;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--White);
+    margin-left: -0.4%;
+    text-shadow: 0px 0px 30px rgba(255, 255, 255, .5)
+  }
+
+
+  .title_unactive {
+    position: absolute;
+    font-size: 8.9em !important;
+    /* left: 50%;
+    top: 50%; */
+    transform: translate(-50%, -50%);
+    color: var(--White);
+    margin-left: -0.4%;
+    text-shadow: 0px 0px 20px rgba(255, 255, 255, .1)
+  }
+
+  .Section {
+    animation-name: fade;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+  }
+
+  @keyframes fade {
+    0% { opacity: 0 }
+    60% { opacity: 0 }
+    100% { opacity: 1 }
+  }
+
+  .Menu {
+    position: fixed;
+    overflow: hidden;
+    backdrop-filter: blur(5px) brightness(50%);
+    z-index: 50;
+    bottom: 15px;
+    right: 15px;
+    width: 420px;
+    height: 80px;
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 10px;
+    transition: .4s ease-out;
+    box-shadow: 0px 0px 15px rgba(0,0,0, .4);
+    animation: menuStart;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+  }
+
+  @keyframes menuStart {
+    0% {  bottom: -100px }
+    60% {  bottom: -100px }
+    100% { bottom: 15px }
+  }
+
+  .NavbarMobile {
+    position: fixed;
+    overflow: hidden;
+    backdrop-filter: blur(5px) brightness(50%);
+    bottom: 10px;
+    z-index: 50;
+    width: 95%;
+    margin-left: 2.5%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0,0,0, .4);
+  }
+
+  .StaticIcon {
+    width: 75px;
+    height: 75px;
+  }
+
+  .MenuIcon {
+    width: 75px;
+    height: 75px;
+    margin-right: 20px;
+  }
+
+  .Menu:hover .StaticIcon{
+    display: none;
+  }
+
+  .SimpleRow {
+    display:flex;
+    flex-direction: row;
+  }
+
+  .geranium {
+    position: fixed;
+    top: 40px;
+    right: 110px;
+    width: 160px;
+  }

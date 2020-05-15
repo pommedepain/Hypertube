@@ -1,0 +1,23 @@
+.UserProfil {
+    position: fixed;
+    overflow: hidden;
+    backdrop-filter: blur(5px) brightness(50%);
+    z-index: 50;
+    top: 10px;
+    left: 10px;
+    width: 420px;
+    height: 230px;
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 10px;
+    text-align: left;
+    transition: .6s ease-out;
+    text-shadow: none;
+    box-shadow: 0px 0px 15px rgba(0,0,0, .4);
+}
+
+.ProfilName {
+    font-size: 1.8em ;
+    color: black;
+    font-family: 'Roboto', 'Sergoe', sans-serif; 
+    font-weight: 700 !important;
+}

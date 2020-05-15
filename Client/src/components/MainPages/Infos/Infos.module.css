@@ -1,0 +1,198 @@
+/* The integrality of what represents the form */
+.card {
+	display: flex;
+	flex-direction: column;
+	background-color: transparent;
+}
+
+/* Animation for the display of the input on load */
+@keyframes expand {
+	0% {  opacity: 0; }
+	50% {  opacity: 0;}
+    100% { opacity: 1; }
+}
+
+/* Everything bellow the title */
+.infos {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+  margin-top: -5%;
+  height: 150px;
+}
+/* Sub-part of infos about the photo */
+.photoBlock {
+	width: 150px;
+}
+.profilPic {
+  width: 150px;
+  height: 150px;
+}
+.photoBlock img {
+	width: 100%;
+}
+/* Sub-part of the photo block that represents the upload input */
+.uploadForm {
+	height: 150px;
+	width: 150px;
+	background-color: #C026D1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+.uploadForm:hover {
+  opacity: .5;
+}
+.fileLabel {
+	cursor: pointer;
+	width: 150px;
+  height: 150px;
+  z-index: 50;
+}
+.fileInput {
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+  cursor: pointer;
+  z-index: 50;
+}
+/* div that surrounds the preview of the image */
+.previewGlobal {
+	position: absolute;
+	width: 150px;
+	height: 150px;
+}
+.previewImg {
+	position: relative;
+	width: 150px;
+	height: 150px;
+}
+
+/* The part that includes all the infos about the user without the photo block */
+.infosBlock {
+	width: 50%;
+	height: 150px;
+	padding-left: 5%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.infosBlock > h4 {
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
+.username {
+	font-size: 3em;
+	text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+	color: #97f7c7;
+	text-shadow: 0px 0px 10px rgba(120, 245, 182, .4);
+	width: 100%;
+}
+/* the div that surrounds firstName, lastName and email to display them closer */
+.groupedInfos {
+	display: flex;
+  flex-direction: column;
+  margin-top: 0;
+}
+.groupedInfos > h4 {
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+	margin-block-start: 0;
+  margin-block-end: 0;
+  font-size: 1.5em;
+}
+.firstLastName {
+  display: flex;
+  flex-direction: row;
+	font-size: 1.5em;
+	margin-top: -20px !important;
+	margin-bottom: 10px;
+}
+.firstLastNameH4 {
+  display: flex;
+	flex-direction: row;
+	margin-top: -30px;
+  font-size: 1.5em;
+}
+.firstLastName, .email {
+	font-size: 1.5em;
+	color: rgba(245, 245, 245, 0.719);
+  font-weight: 300;
+  font-size: 1.2em;
+}
+
+
+/* Select input for language */
+.defaultLanguage {
+	font-size: 2em;
+  color: var(--White);
+	font-weight: 400;
+}
+
+/* Sub-part of infos that represents the save/edit button and the reset password button */
+.buttonsBlock {
+	position: absolute;
+	width: 100px;
+	height: 100%;
+	right: 0;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+.edit, .save {
+  cursor: pointer;
+}
+.edit {
+	margin-top: -10px;
+	border: 0;
+	background: transparent;
+	color: #03CBE5;
+	font-weight: 700;
+	font-size: 2em;
+}
+.edit:focus {
+	outline: none;
+}
+.save {
+	margin-top: -10px;
+	border: 0;
+	background: transparent;
+	color: #01B50F;
+	font-weight: 700;
+  font-size: 2em;
+}
+.save:focus {
+	outline: none;
+}
+.save:disabled,
+.save[disabled]{
+  color: #666666;
+  cursor: not-allowed;
+  text-shadow: none;
+}
+.reset {
+	border: 0;
+	background: transparent;
+	color: #BE0101;
+	font-weight: 700;
+	font-size: 2em;
+}
+.reset:focus {
+	outline: none;
+}
+
+/* Sub-part of infos. The div that displays only when a photo is being uploaded to the cloud */ 
+.uploadPhoto {
+  width: 150px;
+  text-align: center;
+  font-size: 1.2em;
+}

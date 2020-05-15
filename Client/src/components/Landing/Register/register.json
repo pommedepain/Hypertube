@@ -1,0 +1,137 @@
+{
+	"username": {
+		"config" : {
+			"elementType": "input",
+			"elementConfig": {
+				"type": "text",
+				"placeholder": "Choose a username"
+			},
+			"value": "",
+			"validation": {
+				"required": true, 
+				"minLength": 3,
+				"maxLength": 30,
+				"regex": "^[a-zA-Z0-9_]{3,30}$",
+				"db": true,
+				"rule": "Must not contain anything else than alphabetical characters, numbers or underscores"
+			},
+			"valid": false,
+			"touched": false,
+			"errorMessage": ""
+		},
+		"id": "username"
+	},
+	"firstName": {
+		"config" : {
+			"elementType": "input",
+			"elementConfig": {
+				"type": "text",
+				"placeholder": "First Name"
+			},
+			"value": "",
+			"validation": {
+				"required": true, 
+				"minLength": 2,
+				"maxLength": 18,
+				"regex": "^[a-zA-Z-àæéèêëçàùûîïÀÆÉÈÊÇÀÛÙÜÎÏ]{2,18}$",
+				"rule": "Must not contain anything else than alphabetical characters"
+			},
+			"valid": false,
+			"touched": false,
+			"errorMessage": ""
+		},
+		"id": "firstName"
+	},
+	"lastName": {
+		"config": {
+			"elementType": "input",
+			"elementConfig": {
+				"type": "text",
+				"placeholder": "Last Name"
+			},
+			"value": "",
+			"validation": {
+				"required": true, 
+				"minLength": 2,
+				"maxLength": 18,
+				"regex": "^[a-zA-Z-àæéèêëçàùûîï ÀÆÉÈÊÇÀÛÙÜÎÏ]{2,18}$",
+				"rule": "Must not contain anything else than alphabetical characters"
+			},
+			"valid": false,
+			"touched": false,
+			"errorMessage": ""
+		},
+		"id": "lastName"
+	},
+	"email": {
+		"config": {
+			"elementType": "input",
+			"elementConfig": {
+				"type": "email",
+				"placeholder": "E-Mail"
+			},
+			"value": "",
+			"validation": {
+				"required": true,
+				"regex": "^[^%5CW][a-zA-Z0-9_]+(%5C.[a-zA-Z0-9_]+)*%5C@[a-zA-Z0-9_]+(%5C.[a-zA-Z0-9_]+)*%5C.[a-zA-Z]{2,4}$",
+				"rule": "Must be a valid e-mail adress",
+				"checkEmail": true
+			},
+			"valid": false,
+			"touched": false,
+			"errorMessage": ""
+		},
+		"id": "email"
+  },
+  "photo": {
+		"config": {
+			"elementType": "image",
+			"value": "",
+			"touched": false,
+      "errorMessage": "",
+      "valid": false
+		},
+		"id": "photo"
+	},
+	"password": {
+		"config": {
+			"elementType": "input",
+			"elementConfig": {
+				"type": "password",
+				"placeholder": "Choose a password"
+			},
+			"value": "",
+			"validation": {
+				"required": true, 
+				"minLength": 7,
+				"maxLength": 150,
+				"regex": "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#%5C$%%5C^&%5C*])(?=.{7,150})",
+				"rule": "Must have at least: 1 uppercase, 1 lowercase, 1 number and 1 special character"
+			},
+			"valid": false,
+			"touched": false,
+			"errorMessage": ""
+		},
+		"id": "password"
+	},
+	"cPasswd": {
+		"config": {
+			"elementType": "input",
+			"elementConfig": {
+				"type": "password",
+				"placeholder": "Confirm password"
+			},
+			"value": "",
+			"validation": {
+				"required": true, 
+				"minLength": 7,
+				"maxLength": 150,
+				"regex": "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#%5C$%%5C^&%5C*])(?=.{7,150})"
+			},
+			"valid": false,
+			"touched": false,
+			"errorMessage": "Your entry doesn't match its sibling"
+		},
+		"id": "cPasswd"
+  }
+}

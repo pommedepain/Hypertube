@@ -1,0 +1,527 @@
+body {
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, .4);
+}
+
+.Library {
+    z-index: 0 !important;
+    position: absolute;
+    transition: opacity .8s ease-in-out, width .4s ease-in-out;
+    background-color: transparent;
+    min-width: 600px;
+    height: 600px;
+}
+
+.TitleLibrary {
+    font-size: 6em;
+    font-family: 'Roboto', 'Sergoe', sans-serif; 
+    width: 300px;
+    color: white;
+    font-weight: bold;
+    width: auto !important;
+}
+
+.SearchIcon {
+    width: 50px;
+    height: 50px;
+}
+
+.SearchInput {
+    background-color: var(--White);
+    border-radius: 7px;
+    margin-top: 40px;
+}
+
+.HandleExpand {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+}
+
+
+/* Movie Card */
+
+.clickable_area {
+    position: fixed;
+    z-index: 5 !important;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0, .1);
+    -webkit-backdrop-filter: blur(.1px);
+    backdrop-filter: blur(.1px);
+}
+
+.Movie_card{
+    zoom: 1.25;
+    z-index: 20 !important;
+    position: absolute;
+    opacity: 1;
+    background-size: cover;
+    border: none !important;
+    top: 50px;
+    left: 15%;
+    width: 750px;
+    height: 650px;
+    /* transform: translateX(-50%); */
+    backdrop-filter:  blur(6px) brightness(70%) ;
+    background-color: rgba(255,255, 255, .2);
+    box-shadow: 0px 0px 25px rgba(0,0,0, .6);
+    transition: .4s ease-out;
+    animation-name: movieCardExpand;
+	animation-duration: .3s;
+	animation-timing-function: ease-out;
+}
+
+@keyframes movieCardExpand {
+	0% {  width: 80px }
+    100% { opacity: 750px }
+}
+
+.Movie_card_mobile{
+    z-index: 20 !important;
+    position: absolute;
+    opacity: 1;
+    background-size: cover;
+    top: 50px;
+    left: 40%;
+    width: 500px;
+    height: 650px;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 25px rgba(0,0,0, .6);
+    transition: .4s ease-out
+}
+
+.Movie_card_inside {
+    z-index: 30 !important;
+    opacity: 1;
+    height: 100%;
+    border: none !important;
+    overflow-y: hidden;
+    transition: .4s ease-out;
+    animation-name: movieCardLaunch;
+	animation-duration: .4s;
+	animation-timing-function: ease-out;
+}
+
+@keyframes movieCardLaunch {
+	0% {  opacity: 0; }
+	60% {  opacity: 0;}
+    100% { opacity: 1; }
+}
+
+.MovieOinside {
+    opacity: 0;
+    transition: .4s ease-out;
+    padding-bottom: -50px;
+    margin-bottom: -50px;
+    height: 250px;
+    width: 250px;
+    overflow-y: hidden;
+}
+
+.MovieOinside:hover {
+    opacity: 1;
+    backdrop-filter: brightness(30%);
+    transition: .4s ease-out;
+
+}
+
+.TopLogo {
+    margin-top: 15px;
+    margin-right: 20px;
+    width: 70px;
+    height: 70px;
+}
+
+.CommentarySection {
+    z-index: -10 !important;
+    position: absolute;
+    top: 0;
+    right: -500px;
+    width: 300px;
+    height: 650px;
+    background-color: rgba(0, 0, 0, 1);
+    transition: .4s ease-out
+}
+
+.CommentaryMobile {
+    z-index: 50 !important;
+    position: absolute;
+    top: -50px;
+    height: 470px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .8);
+    backdrop-filter:  blur(6px) brightness(30%) ;
+    transition: .4s ease-out
+}
+
+.CommentaryList {
+    width: 90%;
+    height: 80%;
+    margin-top: 10px;
+    overflow-y: scroll;
+    padding-left: 15px;
+}
+
+.SendMessage {
+    width: 100%;
+    height: 105px;
+}
+
+.MessageInput {
+    width: 70%;
+    height: 70px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: rgba(255, 255, 255, .4);
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+/* Grid */
+
+.table {
+    max-width: 2500px !important;
+}
+
+.MovieOverview {
+    z-index: 0 !important;
+	background-size: cover;
+    margin: 30px 15px 0px 15px;
+    background-color: #3d3d3d;
+    width: 250px;
+    height: 250px;
+    font-size: 1em;
+}
+
+.MovieToggle {
+    z-index: 5 !important;
+	background-color: #3d3d3d;
+	background-size: cover;
+	margin: 30px 15px 0px 15px;
+    width: 250px;
+    height: 250px;
+}
+
+.FullLib {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    animation-name: fade;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+}
+
+
+
+@keyframes fade {
+    0% { opacity: 0 }
+    60% { opacity: 0 }
+
+    100% { opacity: 1 }
+  }
+
+.ToggleCat {
+    background-color: white;
+    padding: 0px 5px ;
+    color: black;
+    border-radius: 2px;
+}
+
+.EmptyCat {
+    background-color: transparent;
+    color: white;
+}
+
+.TitleOverview {
+    bottom: 0;
+    font-size: 5em;
+    margin-left: 10px;
+}
+
+.EmptyOverview {
+    z-index: 0 !important;
+    background-size: cover;
+    background-color: #363636;
+	margin: 30px 15px 0px 15px;
+    width: 250px;
+    height: 250px;
+    font-size: 1em;
+}
+
+@keyframes bkload {
+    0%   {background: white;}
+    50%  {background: rgb(100, 100, 100);}
+    100% {background: white;}
+}
+
+.PageSelector {
+    text-align: center;
+    width: 220px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: sticky;
+    bottom: -10px;
+    background-color: rgba(0,0,0, .6);
+    height: 50px;
+    backdrop-filter: blur(5px);
+    opacity: 1;
+    border-radius: 5px;
+    transition: .4s ease-out;
+}
+
+.PageSelector:hover {
+    background-color: rgba(0,0,0, .95);
+    bottom: 5px;
+    width: 370px;
+}
+
+.ArrowPage {
+    transition: .1s ease-out;
+    position: sticky;
+    bottom: calc(50% - 140px);
+    width: 70px;
+    height: 70px;
+}
+
+.MDRow {
+    display: flex;
+    flex-direction: row;
+    opacity: 0;
+    font-weight: bold !important;
+    transition: .4s ease-out;
+    margin-top: -10px;
+    margin-bottom: -20px;
+}
+
+.CommentaryMessage:hover .MDRow {
+    opacity: 1;
+    transition: .4s ease-out;
+
+}
+
+.AditionnalInfos {
+    margin-left: 23px;
+    font-weight: bold !important;
+    font-size: 1.1em;
+    margin-top: .8em;
+    transition: .4s ease-out;
+}
+
+.HelpfullLogo {
+    margin-top: .6em;
+    margin-left: 15px;
+    padding-top: .6em;
+    transition: .4s ease-out;
+    transition-delay: .2s;
+}
+
+.streamingButtons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 530px;
+    margin-left: 3%;
+    margin-top: 2%;
+    position: relative;
+}
+.btn-group > button {
+    height: 3em;
+}
+.launch {
+    color: var(--White);
+    font-size: 3em;
+    margin-right: 2%;
+    cursor: pointer;
+}
+@media (max-width: 600px) {
+    .Library {
+        position: relative;
+        width: 150%;
+        min-width: 0;
+        height: 600px;
+    }
+}
+
+.streamButton {
+    float: right;
+    width: 7em;
+    text-align: center;
+    height: 48px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 2px 15px rgba(0,0,0, .6);
+    transition: .4s ease-out;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.streamButton:hover {
+    width: 13em;
+}
+
+.LaunchButton {
+    cursor: pointer;
+    width: 8em;
+    z-index: 10;
+    /* background-color: red; */
+    height: 50px;
+    margin-top: -1px;
+    margin-left: -13px;
+    border-radius: 5px;
+    transition: .4s ease-out;
+    box-shadow: 0px 2px 5px rgba(0,0,0, .7);
+}
+
+.torrentWrapper {
+    z-index: 5;
+    margin-top: .4em;
+    position: absolute;
+    right: 0;
+    height: 50px;
+}
+
+.streamButton:hover .torrentWrapper {
+    display: block;
+}
+
+.cardTitle {
+    width: 80%; 
+    overflow:hidden;
+    font-weight: 700;
+    margin-bottom: 20px; 
+    margin-left: 20px;
+}
+
+.cardDirector {
+    margin-top: -10px;
+    margin-left: 10px;
+    font-size: 3em;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, .2);
+    width: 320px;
+}
+
+.playerWrapper {
+    overflow: hidden;
+    transition: .3s ease-out;
+    width: 100%;
+}
+
+.cardMiniat {
+    width: 240px;
+    height: 240px;
+    background-size: cover;
+}
+
+.cardLeft {
+    position: absolute;
+    width: 39%;
+    text-align: right;
+    right: 20px;
+    transition: .3s ease-out;
+}
+
+.cardPlot {
+    font-size: 1.5em;
+    width: 520px;
+    margin-top: 60px;
+    height: 200px;
+    margin-left: 20px;
+    transition: .1s ease-out;
+    text-align: justify;
+    color: lightgrey;
+    text-shadow: 0px 1px 10px rgba(0,0,0, .6);
+}
+
+.cardRating {
+    transition: .2s ease-out;
+    position: fixed;
+    font-weight: bold;
+    right: 20px;
+    bottom: 10px;
+    font-size: 5em;
+    margin-top: -50px;
+    color: yellow;
+}
+
+.cardYear {
+    transition: .2s ease-out;
+    font-size: 3em;
+}
+
+.cardDuration {
+    transition: .2s ease-out;
+    font-size: 2em;
+    font-weight: 500;
+    margin-top: -15px;
+    margin-bottom: 20px;
+}
+
+.trailerButton {
+    width: 8em;
+    text-align: center;
+    height: 50px;
+    margin-bottom: 30px;
+    box-shadow: 0px 2px 15px rgba(0,0,0, .7);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: calc(100% - 8em);
+    transition: .4s ease-out;
+}
+
+.reduceButton {
+    position: absolute;
+    width: 8em;
+    text-align: center;
+    height: 50px;
+    box-shadow: 0px 2px 15px rgba(0,0,0, .7);
+    border-radius: 5px;
+    cursor: pointer;
+    left: calc(100% - 8em);
+    bottom: 60px;
+    transition: .4s ease-out;
+}
+
+.streamPlayer {
+    width: 533px;
+    height: 300px;
+    background-color: black;
+    margin: 0 auto;
+}
+
+.streamButtonTitle {
+    font-weight: 700;
+    font-size: 1.5em;
+    padding-top: .5em;
+}
+
+.episodeChoice {
+    position: absolute;
+    z-index: 1;
+    width: 480px;
+    height: 230px;
+    transition: .3s ease-out;
+}
+
+.episodeChoice h3 {
+    margin-right: 70px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.episodeChoice hr {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: lightgrey;
+}
+
+.choiceData {
+    background-color: rgba(0,0,0, .2);
+    border-radius: 3px;
+    padding: 5px 10px;
+}
+

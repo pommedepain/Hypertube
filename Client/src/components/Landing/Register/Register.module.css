@@ -1,0 +1,186 @@
+/* H4 that displays form onClick */
+.Register {
+  cursor: pointer;
+  position: fixed; 
+  top: 44%; 
+  left: 57.8%; 
+  margin: 0 auto; 
+  color: white;
+  font-size: 1.6em;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: .4s ease-out;
+}
+
+/* Div that contains the whole form (without the title) and that allows (by its change of opacity) to allow the animations to work */
+.cont {
+	transition: ease-in-out .2s;
+}
+
+/* Div that contains the whole form (without the title) */
+.main {
+	position: absolute;
+	top: 46%;
+	left: 38.2%;
+	width: 25.2%;
+	height: 320px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Sub-part of main about the photo */
+.photoBlock {
+	width: 25%;
+}
+.photoBlock img {
+	width: 100%;
+}
+
+/* Sub-part of the photo block that represents the upload input */
+.uploadForm {
+	height: 150px;
+	width: 150px;
+	background-color: #C026D1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	margin-bottom: 10px;
+	margin-right: 20px;
+}
+.uploadForm:hover {
+	background-color: rgb(211, 102, 223);
+}
+.fileLabel {
+	cursor: pointer;
+	width: 150px;
+	height: 150px;
+}
+.fileInput {
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	cursor: pointer;
+}
+/* div that surrounds the preview of the image */
+.previewGlobal {
+	position: absolute;
+	width: 150px;
+	height: 150px;
+}
+.previewImg {
+	position: relative;
+	width: 150px;
+	height: 150px;
+}
+
+/* The part that includes all the infos about the user without the photo block */
+.infosBlock {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.infosBlock > h4 {
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
+.firstInfos {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	justify-content: space-between;
+}
+.username {
+	font-size: 2.5vw;
+	font-weight: 700;
+}
+.email {
+	font-size: 2vw;
+	color: rgba(245, 245, 245, 0.719);
+	font-weight: 300;
+}
+/* Div that surrounds firstName and LastName and the 2 passwords input to display them on the same line */
+.sameLine {
+	display: flex;
+	flex-direction: row;
+	width: 96%;
+}
+/* Div that surrounds the passwords that is just bellow the whole infos block section */
+.alone {
+	margin-left: -12px;
+	margin-top: 25px;
+	width: 98%;
+}
+
+/* Sub-part of main that represents the submit button, the error display and the uploading display */
+.buttonBox {
+	position: relative;
+	width: 100%;
+  height: 40px;
+  color: #f0f0f0;
+  font-size: 2em;
+  font-weight: 700;
+}
+.error {
+  color: var(--DangerousRed);
+  font-weight: 700;
+  font-size: 1em;
+  border: 0;
+  background: transparent;
+  margin: 0;
+	bottom: 0;
+	position: absolute;
+}
+.submitButton {
+	border: 0;
+	background: transparent;
+	text-transform: uppercase;
+	color: #01B50F;
+	text-shadow: 0px 0px 15px rgba(0, 255, 0, .3);
+	font-weight: 700;
+	font-size: .7em;
+	cursor: pointer;
+	right: 2.2em;
+	bottom: 0;
+	position: absolute;
+}
+.submitButton:focus {
+	outline: none;
+}
+.submitButton {
+  animation-name: expand;
+	animation-duration: 1.2s;
+	animation-timing-function: ease-out;
+}
+.submitButton:disabled,
+.submitButton[disabled]{
+  color: #666666;
+  cursor: not-allowed;
+  text-shadow: none;
+}
+
+/* Animation for the display of the input on load */
+@keyframes expand {
+	0% {  opacity: 0; }
+	50% {  opacity: 0;}
+  100% { opacity: 1; }
+}
+@media (max-width: 600px) {
+	.Register {
+	  top: 50%;
+	  right: 25%;
+	}
+	.main {
+		top: 60%;
+		left: 5%;
+		width: 90%;
+	}
+}

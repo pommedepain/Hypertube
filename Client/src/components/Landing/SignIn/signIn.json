@@ -1,0 +1,45 @@
+{
+	"username": {
+		"config" : {
+			"elementType": "input",
+			"elementConfig": {
+				"type": "text",
+				"placeholder": "Username"
+			},
+			"value": "",
+			"validation": {
+				"required": true, 
+				"minLength": 3,
+				"maxLength": 30,
+				"regex": "^[a-zA-Z0-9_]{3,30}$",
+				"db": true,
+				"rule": "Must not contain anything else than alphabetical characters, numbers or underscores"
+			},
+			"valid": false,
+			"touched": false,
+			"errorMessage": ""
+		},
+		"id": "username"
+	},
+	"password": {
+		"config": {
+			"elementType": "input",
+			"elementConfig": {
+				"type": "password",
+				"placeholder": "Password"
+			},
+			"value": "",
+			"validation": {
+				"required": true, 
+				"minLength": 7,
+				"maxLength": 150,
+				"regex": "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#%5C$%%5C^&%5C*])(?=.{7,150})",
+				"rule": "Must have at least: 1 uppercase, 1 lowercase, 1 number and 1 special character"
+			},
+			"valid": false,
+			"touched": false,
+			"errorMessage": ""
+		},
+		"id": "password"
+	}
+}

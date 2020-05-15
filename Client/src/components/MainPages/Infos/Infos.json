@@ -1,0 +1,120 @@
+{
+	"username": {
+		"config" : {
+			"elementType": "input",
+			"elementConfig": {
+				"type": "text",
+				"placeholder": "Choose a username"
+			},
+			"value": "",
+			"validation": {
+				"required": true, 
+				"minLength": 3,
+				"maxLength": 30,
+				"regex": "^[a-zA-Z0-9_]{3,30}$",
+				"db": true,
+				"rule": "Must not contain anything else than alphabetical characters, numbers or underscores"
+			},
+			"valid": false,
+			"touched": false,
+			"errorMessage": ""
+		},
+		"id": "username"
+	},
+	"firstName": {
+		"config" : {
+			"elementType": "input",
+			"elementConfig": {
+				"type": "text",
+				"placeholder": "First Name"
+			},
+			"value": "",
+			"validation": {
+				"required": true, 
+				"minLength": 2,
+				"maxLength": 18,
+				"regex": "^[a-zA-Z-àæéèêëçàùûîïÀÆÉÈÊÇÀÛÙÜÎÏ]{2,18}$",
+				"rule": "Must not contain anything else than alphabetical characters"
+			},
+			"valid": false,
+			"touched": false,
+			"errorMessage": ""
+		},
+		"id": "firstName"
+	},
+	"lastName": {
+		"config": {
+			"elementType": "input",
+			"elementConfig": {
+				"type": "text",
+				"placeholder": "Last Name"
+			},
+			"value": "",
+			"validation": {
+				"required": true, 
+				"minLength": 2,
+				"maxLength": 18,
+				"regex": "^[a-zA-Z-àæéèêëçàùûîï ÀÆÉÈÊÇÀÛÙÜÎÏ]{2,18}$",
+				"rule": "Must not contain anything else than alphabetical characters"
+			},
+			"valid": false,
+			"touched": false,
+			"errorMessage": ""
+		},
+		"id": "lastName"
+	},
+	"email": {
+		"config": {
+			"elementType": "input",
+			"elementConfig": {
+				"type": "email",
+				"placeholder": "E-Mail"
+			},
+			"value": "",
+			"validation": {
+				"required": true,
+				"regex": "^[^%5CW][a-zA-Z0-9_]+(%5C.[a-zA-Z0-9_]+)*%5C@[a-zA-Z0-9_]+(%5C.[a-zA-Z0-9_]+)*%5C.[a-zA-Z]{2,4}$",
+				"rule": "Must be a valid e-mail adress"
+			},
+			"valid": false,
+			"touched": false,
+			"errorMessage": ""
+		},
+		"id": "email"
+	},
+	"defaultLanguage": {
+		"config": {
+			"elementType": "select",
+			"elementConfig": {
+				"options": [
+					{ "value": "english", "displayValue": "English", "id": "english" },
+					{ "value": "french", "displayValue": "French", "id": "french" },
+					{ "value": "german", "displayValue": "German", "id": "german" },
+					{ "value": "spanish", "displayValue": "Spanish", "id": "spanish" },
+					{ "value": "arabic", "displayValue": "Arabic", "id": "arabic" },
+					{ "value": "chinese", "displayValue": "Chinese", "id": "chinese" }
+				],
+				"type": "radio"
+			},
+      "value": "",
+			"validation": {
+				"regex": "^(english|french|german|spanish|arabic|chinese)$"
+			},
+			"valid": true,
+			"touched": false,
+			"errorMessage": "",
+			"title": "Default Language"
+		},
+		"id": "defaultLanguage"
+  },
+  "photo": {
+		"config": {
+			"elementType": "image",
+			"value": "",
+			"touched": false,
+      "errorMessage": "",
+      "valid": false
+		},
+		"id": "photo"
+	}
+}

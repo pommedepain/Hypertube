@@ -1,0 +1,186 @@
+/* H4 that displays form onClick */
+.signIn {
+  cursor: pointer;
+  position: fixed; 
+  top: 44%; 
+  left: 38.2%; 
+  margin: 0 auto; 
+  color: white;
+  font-size: 1.6em;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: .4s ease-out;
+}
+
+/* Div that contains the whole form (without the title) and that allows (by its change of opacity) to allow the animations to work */
+.cont {
+	transition: ease-in-out .2s;
+}
+
+/* Div that contains the whole form (without the title) */
+.main {
+	position: absolute;
+	top: 48%;
+	left: 42%;
+	width: 500px;
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/* The div that surrounds the 2 inputs */
+.infosBlock {
+	width: 100%;
+	height: 100%;
+	padding-left: 12%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+/* Sub-part of main that represents the submit button and the error display */
+.buttonBox {
+  position: absolute;
+	top: 80%;
+	width: 87%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.buttonBox > p {
+  font-size: 1.2em;
+}
+.error {
+  color: var(--DangerousRed);
+  padding-left: 6%;
+  font-weight: 700;
+  font-size: 2em;
+  border: 0;
+  background: transparent;
+  margin: 0;
+	bottom: 0;
+	position: absolute;
+}
+.success {
+  padding-left: 6%;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: var(--ValidGreen);
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+}
+
+.errorReset {
+  padding-left: 6%;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: var(--DangerousRed);
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+}
+
+.resetButton {
+  padding-left: 6%;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #BE0101;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+}
+
+.resetButton2 {
+  padding-left: 6%;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #BE0101;
+  text-shadow: 0px 0px 15px rgba(173, 0, 12, .3);
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+}
+
+.resetButton2:hover span {display:none}
+.resetButton2:hover:before {content:"RESET PWD"}
+
+.resetButton:focus {
+  outline: none;
+}
+
+.resetButton2:focus {
+  outline: none;
+}
+.submitButton {
+	border: 0;
+	background: transparent;
+	color: #01B50F;
+	font-weight: 700;
+	font-size: 1.2em;
+	cursor: pointer;
+	right: 0;
+	bottom: 0;
+	text-shadow: 0px 0px 15px rgba(0, 255, 0, .3);
+}.submitButton {
+  animation-name: expand;
+	animation-duration: 1.2s;
+	animation-timing-function: ease-out;
+}
+.submitButton:disabled,
+.submitButton[disabled]{
+  color: #666666;
+  cursor: not-allowed;
+  text-shadow: none;
+  top: 50%;
+}
+
+/* Animation for the display of the input on load */
+@keyframes expand {
+	0% {  opacity: 0; }
+	50% {  opacity: 0;}
+  100% { opacity: 1; }
+}
+
+.resetDiv {
+  position: absolute;
+	top: 95%;
+	width: 500px;
+	height: 75px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+@media (max-width: 600px) {
+  .signIn {
+    top: 50%;
+    left: 25%;
+  }
+  .main {
+    top: 60%;
+    left: -5%;
+  }
+}
+
+.omniAuth {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 80%; 
+  top: 150px;
+  margin-left: 2%;
+  animation-name: expand;
+	animation-duration: 2s;
+  animation-timing-function: ease-out;
+  transition: .4s ease-out;
+  background-color: transparent
+}
